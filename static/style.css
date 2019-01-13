@@ -1,0 +1,67 @@
+body {
+	margin: 0px;
+	padding: 0px;
+	height: 100%;
+	width: 100%;
+}
+h1, h2, h3, h4 {
+	font-family: 'Ubuntu', sans-serif;
+}
+p, a, span, label, h5, button, li {
+	font-family: 'EB Garamond', serif;
+}
+.code {
+	font-family: 'Inconsolata';
+}
+nav {
+	display: flex;
+	flex-direction: column;
+	justify-content: start;
+	color: white;
+	align-content: center;
+	background-color: #67217A;
+	width: 100%;
+	padding: 15px;
+}
+nav h1, nav h3 {
+	text-align: center;
+}
+nav h1 {
+	margin: 0;
+	font-size: 2em;
+}
+nav h3 {
+	margin: 5px 0px 0px 0px;
+	font-family: 'EB Garamond', serif;
+	font-weight: 400;
+}
+
+main {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: start;
+	align-content: center;
+	background-color: rgba(0, 0, 0, .1);
+}
+
+footer {
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	align-content: center;
+	padding: 15px;
+	background-color: #67217A;
+	color: white;
+}
+footer > a {
+	transition-duration: 300ms;
+	color: white;
+	text-decoration: none;
+}
+footer > a:hover {
+	transition-duration: 300ms;
+	color: rgba(0, 0, 0, .2);
+}
