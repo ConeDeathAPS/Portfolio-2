@@ -1,18 +1,137 @@
-body {
+html, body {
 	margin: 0px;
 	padding: 0px;
 	height: 100%;
 	width: 100%;
 }
-h1, h2, h3, h4 {
+body {
+	min-height: 100%;
+	display: flex;
+	flex-direction: column;
+}
+/*
+	Primary-darkest: #380247 rgba(56, 2, 71, 1);
+	Primary-dark: #511063 rgba(81, 16, 99, 1);
+	Primary: #67217A rgba(102, 33, 122, 1);
+	Primary-light: #7A398D rgba(122, 57, 141, 1);
+	Primary-lightest: #975EA7 rgba(151, 94, 167, 1);
+	Accent-darkest: #396200 rgba(57, 98, 0, 1);
+	Accent-dark: #578912 rgba(87, 137, 18, 1);
+	Accent: #73A92A rgba(116, 169, 42, 1);
+	Accent-light: #91C34B rgba(144, 195, 75 1);
+	Accent-lightest: #91C34B rgba(187, 231, 126, 1);
+*/
+
+/* Font Sizes*/
+h1 {
+	font-size: 3em;
+}
+h2 {
+	font-size: 2.5em;
+}
+h3 {
+	font-size: 2em;
+}
+h4 {
+	font-size: 1.5em;
+}
+h5 {
+	font-size: 1.2em;
+}
+p, a, span, li, label, button {
+	font-size: 1.2em;
+}
+h1, h2, h3, h4, button {
 	font-family: 'Ubuntu', sans-serif;
 }
-p, a, span, label, h5, button, li {
+p, a, span, label, h5, li {
 	font-family: 'EB Garamond', serif;
 }
 .code {
 	font-family: 'Inconsolata';
 }
+
+/* Button styling 
+Colors and styling are applied as follows:
+	(no classes) - black/gray
+	primary - transparent background, primary-dark text
+	accent - transparent background, accent-dark text
+	
+Style modifiers
+	outline - adds 1ps solid black border to the standard button
+	raised - fills button with the indicated color and inverts text color to be readable.
+
+Events
+	hover - darken (if not raised) or lighten (if raised) background 2 steps
+	active - lighten background 1 step lighter than the hover color
+*/
+button {
+	padding: 4px 12px;
+	margin: 0px 5px;
+	border-radius: 4px;
+	border: none;
+	color: black;
+	cursor: pointer;
+	background: transparent;
+}
+button:hover {
+	background-color: rgba(0, 0, 0, .2);
+}
+button:active {
+	background-color: rgba(0, 0, 0, .15);
+}
+/* This is to override default focus styling from chrome*/
+button:focus {
+	outline: none!important;
+}
+button.primary {
+	color: rgba(102, 33, 122, 1);
+}
+button.primary:hover {
+	background-color: rgba(102, 33, 122, .12);
+}
+button.primary:active {
+	background-color: rgba(102, 33, 122, .08);
+}
+button.primary.raised {
+	background-color: rgba(102, 33, 122, 1);
+	color: white;
+}
+button.primary.raised:hover {
+	background-color: rgba(102, 33, 122, .8);
+}
+button.primary.raised:active {
+	background-color: rgba(102, 33, 122, .72);
+}
+button.accent {
+	color: rgba(116, 169, 42, 1);
+}
+button.accent:hover {
+	background-color: rgba(116, 169, 42, .12);
+}
+button.accent:active {
+	background-color: rgba(116, 169, 42, .08);
+}
+button.accent.raised {
+	background-color: rgba(116, 169, 42, 1);
+	color: white;
+}
+button.accent.raised:hover {
+	background-color: rgba(116, 169, 42, .8);
+}
+button.accent.raised:active {
+	background-color: rgba(116, 169, 42, .72);
+}
+
+button.outline {
+	border: 1px solid black;
+}
+
+
+
+
+
+
 nav {
 	display: flex;
 	flex-direction: column;
@@ -28,7 +147,6 @@ nav h1, nav h3 {
 }
 nav h1 {
 	margin: 0;
-	font-size: 2em;
 }
 nav h3 {
 	margin: 5px 0px 0px 0px;
@@ -38,14 +156,14 @@ nav h3 {
 
 main {
 	width: 100%;
-	height: 100%;
 	display: flex;
+	flex: 1;
 	flex-direction: column;
 	justify-content: start;
 	align-items: center;
 	background-color: rgba(0, 0, 0, .1);
+	padding: 15px 0px;
 }
-
 main section {
 	display: flex;
 	width: 60%;
@@ -53,10 +171,14 @@ main section {
 	justify-content: start;
 	align-items: center;
 }
-
 main section h2 {
 	text-align: center;
+	margin-bottom: 0px;
 }
+
+
+
+
 
 footer {
 	box-sizing: border-box;
@@ -69,15 +191,22 @@ footer {
 	background-color: #67217A;
 	color: white;
 }
-footer a {
+footer > #footer-links {
+	display: flex;
+	width: 10%;
+	flex-direction: row;
+	justify-content: space-around;
+	align-items: center;
+}
+footer > #footer-links > a {
 	transition-duration: 300ms;
 	color: white;
 	text-decoration: none;
 	font-size: 2em;
 }
-footer a:hover {
+footer > #footer-links > a:hover {
 	transition-duration: 300ms;
-	color: rgba(0, 0, 0, .2);
+	color: #73A92A;
 }
 footer p {
 	margin: 0px;
